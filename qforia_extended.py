@@ -470,4 +470,3 @@ st.markdown("""
     <p>Powered by Google Gemini AI | Built with Streamlit</p>
 </div>
 """, unsafe_allow_html=True)
-
