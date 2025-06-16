@@ -10,16 +10,18 @@ def load_custom_css():
     <style>
     /* Main app styling */
     .main {
+        background-color: #F5F7FA; /* Lighter main background */
         padding-top: 2rem;
     }
     
     /* Header styling */
     .main-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* New primary gradient */
+        background: linear-gradient(135deg, #0D47A1 0%, #4285F4 100%);
         padding: 2rem;
         border-radius: 10px;
         margin-bottom: 2rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
     
     .main-header h1 {
@@ -27,11 +29,11 @@ def load_custom_css():
         text-align: center;
         font-size: 2.5rem !important;
         margin-bottom: 0.5rem !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     }
     
     .main-header p {
-        color: #f0f0f0 !important;
+        color: #E3F2FD !important; /* Lighter text for better contrast */
         text-align: center;
         font-size: 1.2rem;
         margin: 0 !important;
@@ -39,11 +41,12 @@ def load_custom_css():
     
     /* Sidebar styling */
     .css-1d391kg {
-        background-color: #f8f9fa;
+        background-color: #FFFFFF; /* Clean white sidebar */
     }
     
     .sidebar-header {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        /* New accent gradient for sidebar */
+        background: linear-gradient(135deg, #00796B 0%, #009688 100%);
         padding: 1rem;
         border-radius: 8px;
         margin-bottom: 1rem;
@@ -57,7 +60,8 @@ def load_custom_css():
     
     /* Button styling */
     .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        /* Matching the new primary gradient */
+        background: linear-gradient(135deg, #0D47A1 0%, #4285F4 100%);
         color: white;
         border: none;
         border-radius: 8px;
@@ -72,22 +76,23 @@ def load_custom_css():
     .stButton > button:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        filter: brightness(1.1); /* Add brightness on hover */
     }
     
     /* Input field styling */
     .stTextInput > div > div > input,
     .stTextArea > div > div > textarea {
-        border: 2px solid #e1e5e9;
+        border: 1px solid #DEE2E6; /* Softer border */
         border-radius: 8px;
         padding: 0.75rem;
         font-size: 1rem;
-        transition: border-color 0.3s ease;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
     
     .stTextInput > div > div > input:focus,
     .stTextArea > div > div > textarea:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        border-color: #4285F4; /* New focus color */
+        box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15); /* Adjusted shadow */
     }
     
     /* Radio button styling */
@@ -98,62 +103,52 @@ def load_custom_css():
         border: 1px solid #e1e5e9;
     }
     
-    /* Success/Error message styling */
-    .stSuccess {
-        background-color: #d4edda;
-        border: 1px solid #c3e6cb;
+    /* Alert styling */
+    .stSuccess, .stError, .stWarning {
         border-radius: 8px;
         padding: 1rem;
+        border-width: 1px;
+        border-style: solid;
     }
-    
-    .stError {
-        background-color: #f8d7da;
-        border: 1px solid #f5c6cb;
-        border-radius: 8px;
-        padding: 1rem;
-    }
-    
-    .stWarning {
-        background-color: #fff3cd;
-        border: 1px solid #ffeaa7;
-        border-radius: 8px;
-        padding: 1rem;
-    }
+    .stSuccess { background-color: #E8F5E9; border-color: #A5D6A7; }
+    .stError { background-color: #FFEBEE; border-color: #EF9A9A; }
+    .stWarning { background-color: #FFFDE7; border-color: #FFF59D; }
     
     /* DataFrame styling */
     .stDataFrame {
-        border: 1px solid #e1e5e9;
+        border: 1px solid #DEE2E6;
         border-radius: 8px;
         overflow: hidden;
     }
     
-    /* Info boxes */
+    /* Info boxes (Replaced old gradient with a cleaner look) */
     .info-box {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        background-color: #E3F2FD; /* Light blue background */
         padding: 1.5rem;
         border-radius: 10px;
         margin: 1rem 0;
-        color: black;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        color: #0D47A1; /* Dark blue text */
+        box-shadow: none;
+        border-left: 5px solid #4285F4; /* Blue accent border */
     }
     
     .info-box h3 {
         margin-top: 0 !important;
-        color: black !important;
+        color: #0D47A1 !important; /* Dark blue header */
     }
     
-    /* Generation details box */
+    /* Generation details box (Replaced gradient for cleaner look) */
     .generation-details {
-        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        background-color: #E0F2F1; /* Light teal background */
         padding: 1.5rem;
         border-radius: 10px;
         margin: 1rem 0;
-        border-left: 5px solid #667eea;
+        border-left: 5px solid #009688; /* Teal accent border */
     }
     
     /* Download button */
     .stDownloadButton > button {
-        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        background: linear-gradient(135deg, #28A745 0%, #20C997 100%); /* New green gradient */
         color: white;
         border: none;
         border-radius: 8px;
@@ -165,6 +160,7 @@ def load_custom_css():
     .stDownloadButton > button:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        filter: brightness(1.1);
     }
     
     /* Spinner styling */
