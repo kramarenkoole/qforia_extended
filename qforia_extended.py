@@ -133,13 +133,13 @@ def load_custom_css():
         padding: 1.5rem;
         border-radius: 10px;
         margin: 1rem 0;
-        color: white;
+        color: black;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
     
     .info-box h3 {
         margin-top: 0 !important;
-        color: white !important;
+        color: black !important;
     }
     
     /* Generation details box */
