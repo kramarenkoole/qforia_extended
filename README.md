@@ -30,7 +30,7 @@ A powerful Streamlit application that simulates Google's AI Mode query fan-out p
 1. Clone this repository:
 ```bash
 git clone https://github.com/Pacamaraprogress/qforia_extended.git
-cd qforia-app
+cd qforia_extended
 ```
 
 2. Install dependencies:
