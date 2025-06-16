@@ -97,7 +97,7 @@ def load_custom_css():
     
     /* Radio button styling */
     .stRadio > div {
-        background-color: white;
+        background-color: black;
         padding: 1rem;
         border-radius: 8px;
         border: 1px solid #e1e5e9;
@@ -183,7 +183,7 @@ def load_custom_css():
 
 # App config
 st.set_page_config(
-    page_title="Qforia - AI Query Fan-Out Simulator", 
+    page_title="Qforia - AI Query Gemini Fan-Out Simulator", 
     layout="wide",
     initial_sidebar_state="expanded",
     page_icon="🔍"
@@ -195,8 +195,8 @@ load_custom_css()
 # Main header with custom styling
 st.markdown("""
 <div class="main-header">
-    <h1>🔍 Qforia</h1>
-    <p>Advanced Query Fan-Out Simulator for AI Search Surfaces</p>
+    <h1>🔍 Qforia_Extended_Omer_EVREY</h1>
+    <p>Advanced Query Fan-Out Simulator for Gemini AI Search Surfaces</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -231,7 +231,7 @@ mode = st.sidebar.radio(
 
 # Add some information about the modes
 st.sidebar.markdown("""
-<div style="background-color: #f0f2f6; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+<div style="background-color: #f0f2f6; color: #343A40; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
     <h4 style="margin-top: 0;">Mode Information:</h4>
     <p><strong>AI Overview:</strong> Generates 10+ focused queries for quick insights</p>
     <p><strong>AI Mode:</strong> Generates 20+ comprehensive queries for deep analysis</p>
@@ -241,7 +241,7 @@ st.sidebar.markdown("""
 # Configure Gemini
 if gemini_key:
     genai.configure(api_key=gemini_key)
-    model = genai.GenerativeModel("gemini-1.5-flash-latest")
+    model = genai.GenerativeModel("gemini-2.5-pro-latest")
 else:
     st.error("🔐 Please enter your Gemini API Key to proceed.")
     st.info("💡 You can get your API key from the Google AI Studio: https://makersuite.google.com/app/apikey")
