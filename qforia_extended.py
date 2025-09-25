@@ -241,7 +241,7 @@ st.sidebar.markdown("""
 # Configure Gemini
 if gemini_key:
     genai.configure(api_key=gemini_key)
-    model = genai.GenerativeModel("gemini-1.5-pro-latest")
+    model = genai.GenerativeModel("gemini-2.5-pro")
 else:
     st.error("🔐 Please enter your Gemini API Key to proceed.")
     st.info("💡 You can get your API key from the Google AI Studio: https://makersuite.google.com/app/apikey")
