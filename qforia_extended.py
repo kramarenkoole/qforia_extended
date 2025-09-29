@@ -213,7 +213,15 @@ gemini_key = st.secrets.get("GEMINI_API_KEY") or st.sidebar.text_input(
     type="password",
     help="Enter your Google Gemini API key to enable AI query generation"
 )
-
+# Configure Gemini
+if gemini_key:
+    genai.configure(api_key=gemini_key)
+    model = genai.GenerativeModel("gemini-2.5-pro")
+else:
+    st.error("🔐 Please enter your Gemini API Key to proceed.")
+    st.info("💡 You can get your API key from the Google AI Studio: https://makersuite.google.com/app/apikey  ")
+    st.stop()
+    
 # Query input with enhanced styling
 user_query = st.sidebar.text_area(
     "💭 Enter your query", 
