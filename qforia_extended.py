@@ -208,7 +208,7 @@ st.sidebar.markdown("""
 """, unsafe_allow_html=True)
 
 # API key input with better styling
-gemini_key = st.sidebar.text_input(
+gemini_key = st.secrets.get("GEMINI_API_KEY") or st.sidebar.text_input(
     "🔑 Gemini API Key", 
     type="password",
     help="Enter your Google Gemini API key to enable AI query generation"
