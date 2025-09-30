@@ -277,7 +277,13 @@ def QUERY_FANOUT_PROMPT(q, mode):
             f"you should generate a more comprehensive set, potentially {min_queries_complex + 5}-{min_queries_complex + 10} queries, or even more if the query is exceptionally broad or deep. "
             f"Provide a brief reasoning for why you chose this specific number of queries. The queries should be diverse and in-depth."
         )
-
+    routing_note = (
+        "For EACH expanded query, also identify the most likely CONTENT TYPE / FORMAT the routing system would prefer "
+        "for retrieval and synthesis (e.g., a how-to should route to 'how_to_steps' or a video transcript; comparisons to 'comparison_table' or 'buyers_guide'). "
+        "Choose exactly ONE label from this fixed list:\n"
+        + ", ".join(ALLOWED_FORMATS) +
+        ".\nReturn it in a field named 'routing_format' and give a short 'format_reason' (1 sentence)."
+    )
     return (
         f"You are simulating Google's AI Mode query fan-out process for generative search systems.\n"
         f"The user's original query is: \"{q}\". The selected mode is: \"{mode}\".\n\n"
@@ -288,6 +294,7 @@ def QUERY_FANOUT_PROMPT(q, mode):
         "1. Reformulations\n2. Related Queries\n3. Implicit Queries\n4. Comparative Queries\n5. Entity Expansions\n6. Personalized Queries\n\n"
         "The 'reasoning' field for each *individual query* should explain why that specific query was generated in relation to the original query, its type, and the overall user intent.\n"
         "Do NOT include queries dependent on real-time user history or geolocation.\n\n"
+        f"{routing_note}\n\n"
         "**IMPORTANT: For each query, you must also provide a 'possible_usage_in_industry' field that suggests 2-3 specific industries or business contexts where this query would be particularly valuable. Be specific and practical.**\n\n"
         "Return only a valid JSON object. The JSON object should strictly follow this format:\n"
         "{\n"
