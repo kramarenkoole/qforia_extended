@@ -97,7 +97,7 @@ def load_custom_css():
     
     /* Radio button styling */
     .stRadio > div {
-        background-color: black;
+        background-color: #0D47A1;
         padding: 1rem;
         border-radius: 8px;
         border: 1px solid #e1e5e9;
@@ -202,7 +202,7 @@ st.markdown("""
 # Sidebar with enhanced styling
 st.sidebar.markdown("""
 <div class="sidebar-header">
-    <h2>⚙️ Configuration</h2>
+    <h2>⚙️ Настройки</h2>
 </div>
 """, unsafe_allow_html=True)
 
@@ -223,25 +223,25 @@ else:
     
 # Query input with enhanced styling
 user_query = st.sidebar.text_area(
-    "💭 Enter your query", 
-    "What's the best electric SUV for driving up mt rainier?", 
+    "💭 Введите запрос", 
+    "Ремонт стиральной машины", 
     height=120,
-    help="Enter the query you want to expand and analyze"
+    help="Укажите запрос, который хотите проанализировать"
 )
 
 # Mode selection with better styling
 mode = st.sidebar.radio(
     "🎯 Search Mode", 
-    ["AI Overview (simple)", "AI Mode (complex)"],
-    help="Choose the complexity level for query generation"
+    ["AI Overview (простой)", "AI Mode (полный)"],
+    help="Выберите уровень анализа запроса"
 )
 
 # Add some information about the modes
 st.sidebar.markdown("""
 <div style="background-color: #f0f2f6; color: #343A40; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
     <h4 style="margin-top: 0;">Mode Information:</h4>
-    <p><strong>AI Overview:</strong> Generates 10+ focused queries for quick insights</p>
-    <p><strong>AI Mode:</strong> Generates 20+ comprehensive queries for deep analysis</p>
+    <p><strong>AI Overview:</strong> генерирует более 10 разветвленных запросов для быстрого получения информации</p>
+    <p><strong>AI Mode:</strong> Генерирует более 20 разветвленных запросов для глубокого анализа</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -387,7 +387,7 @@ if 'generation_details' not in st.session_state:
     st.session_state.generation_details = None
 
 # Generate and display results
-if st.sidebar.button("🚀 Run Fan-Out Analysis"):
+if st.sidebar.button("🚀 Запустить анализ"):
     # Clear previous details
     st.session_state.generation_details = None
     
