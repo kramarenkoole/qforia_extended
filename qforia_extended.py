@@ -194,8 +194,8 @@ load_custom_css()
 # Main header with custom styling
 st.markdown("""
 <div class="main-header">
-    <h1>🔍 Qforia_Extended_Omer_EVREY</h1>
-    <p>Advanced Query Fan-Out Simulator for Gemini AI Search Surfaces</p>
+    <h1>🔍 Анализатор разветвления запросов</h1>
+    <p>Расширенный симулятор разветвления запросов с помощью Gemini AI</p>
 </div>
 """, unsafe_allow_html=True)
 
