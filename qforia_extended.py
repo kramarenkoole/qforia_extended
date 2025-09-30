@@ -469,40 +469,40 @@ if st.sidebar.button("🚀 Run Fan-Out Analysis"):
                             st.write(f"**Industry Usage:** {row['possible_usage_in_industry']}")
                             st.write("---")
             
-            with tab3:
-             # Create enhanced CSV with better column ordering
-csv_df = df[['query', 'type', 'user_intent', 'reasoning', 'possible_usage_in_industry', 'routing_format', 'format_reason']].copy()
-csv_df.columns = [
-    'Query',
-    'Type',
-    'User Intent',
-    'Reasoning',
-    'Possible Usage in Your Industry',
-    'Routing Format',
-    'Format Reason'
-]
-                
-                csv = csv_df.to_csv(index=False).encode("utf-8")
-                st.download_button(
-                    "📥 Download Complete Analysis (CSV)", 
-                    data=csv, 
-                    file_name=f"qforia_analysis_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.csv", 
-                    mime="text/csv"
-                )
-                
-                # Show preview of CSV data
-                st.subheader("📋 CSV Preview")
-                st.dataframe(csv_df.head(5), use_container_width=True)
-                st.info(f"💡 The CSV file will contain all {len(csv_df)} queries with the 'Possible Usage in Your Industry' column included.")
-                
-                # JSON export option
-                json_data = json.dumps(results, indent=2).encode("utf-8")
-                st.download_button(
-                    "📥 Download Raw Data (JSON)", 
-                    data=json_data, 
-                    file_name=f"qforia_raw_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.json", 
-                    mime="application/json"
-                )
+with tab3:
+    # Create enhanced CSV with better column ordering
+    csv_df = df[['query', 'type', 'user_intent', 'reasoning', 'possible_usage_in_industry', 'routing_format', 'format_reason']].copy()
+    csv_df.columns = [
+        'Query',
+        'Type',
+        'User Intent',
+        'Reasoning',
+        'Possible Usage in Your Industry',
+        'Routing Format',
+        'Format Reason'
+    ]
+    
+    csv = csv_df.to_csv(index=False).encode("utf-8")
+    st.download_button(
+        "📥 Download Complete Analysis (CSV)", 
+        data=csv, 
+        file_name=f"qforia_analysis_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.csv", 
+        mime="text/csv"
+    )
+    
+    # Show preview of CSV data
+    st.subheader("📋 CSV Preview")
+    st.dataframe(csv_df.head(5), use_container_width=True)
+    st.info(f"💡 The CSV file will contain all {len(csv_df)} queries with the 'Possible Usage in Your Industry' column included.")
+    
+    # JSON export option
+    json_data = json.dumps(results, indent=2).encode("utf-8")
+    st.download_button(
+        "📥 Download Raw Data (JSON)", 
+        data=json_data, 
+        file_name=f"qforia_raw_{pd.Timestamp.now().strftime('%Y%m%d_%H%M%S')}.json", 
+        mime="application/json"
+    )
         
         elif results is None:  # Error occurred in generate_fanout
             # Error message is already displayed by generate_fanout
