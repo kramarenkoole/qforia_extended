@@ -470,9 +470,17 @@ if st.sidebar.button("🚀 Run Fan-Out Analysis"):
                             st.write("---")
             
             with tab3:
-                # Create enhanced CSV with better column ordering
-                csv_df = df[['query', 'type', 'user_intent', 'reasoning', 'possible_usage_in_industry']].copy()
-                csv_df.columns = ['Query', 'Type', 'User Intent', 'Reasoning', 'Possible Usage in Your Industry']
+             # Create enhanced CSV with better column ordering
+csv_df = df[['query', 'type', 'user_intent', 'reasoning', 'possible_usage_in_industry', 'routing_format', 'format_reason']].copy()
+csv_df.columns = [
+    'Query',
+    'Type',
+    'User Intent',
+    'Reasoning',
+    'Possible Usage in Your Industry',
+    'Routing Format',
+    'Format Reason'
+]
                 
                 csv = csv_df.to_csv(index=False).encode("utf-8")
                 st.download_button(
