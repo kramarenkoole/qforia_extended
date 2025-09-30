@@ -171,7 +171,6 @@ def load_custom_css():
     /* Hide Streamlit menu and footer */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    header {visibility: hidden;}
     
     /* Custom spacing */
     .block-container {
