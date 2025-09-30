@@ -254,6 +254,33 @@ else:
     st.info("💡 You can get your API key from the Google AI Studio: https://makersuite.google.com/app/apikey")
     st.stop()
 
+# Allowed routing formats (sent to the model)
+ALLOWED_FORMATS = [
+    "web_article",
+    "faq_page",
+    "how_to_steps",
+    "comparison_table",
+    "buyers_guide",
+    "checklist",
+    "product_spec_sheet",
+    "glossary/definition",
+    "pricing_page",
+    "review_roundup",
+    "tutorial_video/transcript",
+    "podcast_transcript",
+    "code_samples/docs",
+    "api_reference",
+    "calculator/tool",
+    "dataset",
+    "image_gallery",
+    "map/local_pack",
+    "forum/qna",
+    "pdf_whitepaper",
+    "case_study",
+    "press_release",
+    "interactive_widget"
+]
+
 # Prompt with detailed Chain-of-Thought logic
 def QUERY_FANOUT_PROMPT(q, mode):
     min_queries_simple = 10
